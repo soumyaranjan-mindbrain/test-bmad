@@ -16,6 +16,8 @@ interface Organization {
 
 interface AppState {
   // Navigation & UI state
+  activeView: 'kanban' | 'timesheets' | 'calendar' | 'billing' | 'admin' | 'overview' | 'my_work' | 'team' | 'settings';
+  setActiveView: (view: 'kanban' | 'timesheets' | 'calendar' | 'billing' | 'admin' | 'overview' | 'my_work' | 'team' | 'settings') => void;
   sidebarCollapsed: boolean;
   toggleSidebar: () => void;
   commandPaletteOpen: boolean;
@@ -39,6 +41,8 @@ interface AppState {
 }
 
 export const useAppStore = create<AppState>((set) => ({
+  activeView: 'kanban',
+  setActiveView: (view) => set({ activeView: view }),
   sidebarCollapsed: false,
   toggleSidebar: () => set((state) => ({ sidebarCollapsed: !state.sidebarCollapsed })),
   commandPaletteOpen: false,
