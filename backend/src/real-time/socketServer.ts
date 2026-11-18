@@ -27,6 +27,15 @@ export function initializeSocketServer(httpServer: HttpServer): Server {
   io.use((socket: AuthenticatedSocket, next) => {
     try {
       const token = socket.handshake.auth.token || socket.handshake.headers.authorization?.split(' ')[1];
+      
+      // In development, allow dev mock connection if token is dev_mock_token
+      if (env.NODE_ENV === 'development' && token === 'dev_mock_token') {
+        socket.userId = 'dev_user_1';
+        socket.email = 'alex.morgan@nexus.io';
+        socket.isSuperAdmin = true;
+        return next();
+      }
+
       if (!token) {
         return next(new Error('Authentication required for WebSocket connection.'));
       }
