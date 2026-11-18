@@ -32,12 +32,12 @@ export const Sidebar: React.FC = () => {
 
   return (
     <aside
-      className={`h-[calc(100vh-3.5rem)] sticky top-14 bg-white border-r border-slate-200 flex flex-col justify-between transition-all duration-200 select-none z-20 shrink-0 ${
+      className={`h-[calc(100vh-3.5rem)] bg-white border-r border-slate-200 flex flex-col justify-between select-none z-20 shrink-0 overflow-hidden ${
         sidebarCollapsed ? 'w-16' : 'w-60'
       }`}
     >
-      {/* Top Nav Items */}
-      <div className="p-3 space-y-1 overflow-y-auto">
+      {/* Top Nav Items - Non-scrolling pinned layout */}
+      <div className="p-3 space-y-1 overflow-hidden">
         <div className="flex items-center justify-between px-2 py-1.5 mb-2">
           {!sidebarCollapsed && (
             <div className="flex items-center space-x-2">

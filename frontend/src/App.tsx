@@ -29,17 +29,17 @@ export const App: React.FC = () => {
   const { activeView, setActiveView } = useAppStore();
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans antialiased text-slate-800">
-      {/* 1. Fixed Header (sticky top-0) */}
+    <div className="h-screen w-screen overflow-hidden bg-slate-50 flex flex-col font-sans antialiased text-slate-800">
+      {/* 1. Fixed Header (h-14 fixed at top) */}
       <Navbar />
 
-      {/* Main Layout Body */}
-      <div className="flex flex-1 overflow-hidden relative">
-        {/* 2. Fixed Sidebar (h-[calc(100vh-3.5rem)] sticky) */}
+      {/* Main Layout Body - Fixed viewport */}
+      <div className="flex flex-1 h-[calc(100vh-3.5rem)] overflow-hidden relative">
+        {/* 2. Completely Fixed Sidebar (never scrolls, static height) */}
         <Sidebar />
 
-        {/* 3. Main Scrollable Content Area */}
-        <main className="flex-1 flex flex-col overflow-y-auto bg-slate-50">
+        {/* 3. Main Content Area - Only this container scrolls */}
+        <main className="flex-1 h-full flex flex-col overflow-y-auto bg-slate-50 overscroll-contain">
           {/* Subheader Toolbar with View Switcher */}
           <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md px-6 py-3 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
             {/* Breadcrumb Context */}
