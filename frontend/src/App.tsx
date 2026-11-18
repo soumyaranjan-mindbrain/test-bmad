@@ -6,7 +6,6 @@ import { TaskDetailsDrawer } from './components/drawer/TaskDetailsDrawer';
 import { KanbanBoard } from './components/kanban/KanbanBoard';
 import { TimesheetsView } from './components/timesheets/TimesheetsView';
 import { CalendarView } from './components/calendar/CalendarView';
-import { BillingPortal } from './components/billing/BillingPortal';
 import { AdminPortal } from './components/admin/AdminPortal';
 import { useAppStore } from './stores/useAppStore';
 import {
@@ -15,7 +14,6 @@ import {
   LayoutGrid,
   Clock,
   Calendar as CalendarIcon,
-  CreditCard,
   ShieldCheck,
   TrendingUp,
   Users,
@@ -89,18 +87,6 @@ export const App: React.FC = () => {
                 </button>
 
                 <button
-                  onClick={() => setActiveView('billing')}
-                  className={`flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
-                    activeView === 'billing'
-                      ? 'bg-white text-indigo-600 shadow-2xs'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  <CreditCard className="w-3.5 h-3.5" />
-                  <span>Billing & Quotas</span>
-                </button>
-
-                <button
                   onClick={() => setActiveView('admin')}
                   className={`flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
                     activeView === 'admin'
@@ -155,8 +141,6 @@ export const App: React.FC = () => {
             {activeView === 'timesheets' && <TimesheetsView />}
 
             {activeView === 'calendar' && <CalendarView />}
-
-            {activeView === 'billing' && <BillingPortal />}
 
             {activeView === 'admin' && <AdminPortal />}
 

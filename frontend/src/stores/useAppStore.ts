@@ -16,8 +16,8 @@ interface Organization {
 
 interface AppState {
   // Navigation & UI state
-  activeView: 'kanban' | 'timesheets' | 'calendar' | 'billing' | 'admin' | 'overview' | 'my_work' | 'team' | 'settings';
-  setActiveView: (view: 'kanban' | 'timesheets' | 'calendar' | 'billing' | 'admin' | 'overview' | 'my_work' | 'team' | 'settings') => void;
+  activeView: 'kanban' | 'timesheets' | 'calendar' | 'admin' | 'overview' | 'my_work' | 'team' | 'settings';
+  setActiveView: (view: 'kanban' | 'timesheets' | 'calendar' | 'admin' | 'overview' | 'my_work' | 'team' | 'settings') => void;
   sidebarCollapsed: boolean;
   toggleSidebar: () => void;
   commandPaletteOpen: boolean;

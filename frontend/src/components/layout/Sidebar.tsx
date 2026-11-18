@@ -10,8 +10,6 @@ import {
   Settings,
   ChevronLeft,
   ChevronRight,
-  Sparkles,
-  CreditCard,
   ShieldCheck,
 } from 'lucide-react';
 
@@ -23,10 +21,9 @@ export const Sidebar: React.FC = () => {
     { id: 'timesheets', label: 'Timesheets', icon: Clock },
     { id: 'calendar', label: 'Calendar', icon: Calendar },
     { id: 'overview', label: 'Sprint Analytics', icon: BarChart3 },
-    { id: 'billing', label: 'Billing & Quotas', icon: CreditCard },
-    { id: 'admin', label: 'Admin Control', icon: ShieldCheck },
     { id: 'my_work', label: 'My Assigned Work', icon: CheckCircle2, badge: '4' },
     { id: 'team', label: 'Team Directory', icon: Users },
+    { id: 'admin', label: 'System Admin', icon: ShieldCheck },
     { id: 'settings', label: 'Workspace Settings', icon: Settings },
   ] as const;
 
@@ -90,53 +87,23 @@ export const Sidebar: React.FC = () => {
         })}
       </div>
 
-      {/* Sidebar Footer: Plan Quota Progress Indicators */}
+      {/* Sidebar Footer: System Status */}
       {!sidebarCollapsed ? (
-        <div className="p-3 m-3 bg-slate-50 rounded-xl border border-slate-200/80 space-y-2.5">
+        <div className="p-3 m-3 bg-slate-50 rounded-xl border border-slate-200/80 space-y-2">
           <div className="flex items-center justify-between text-xs">
-            <span className="font-semibold text-slate-700 flex items-center space-x-1">
-              <Sparkles className="w-3.5 h-3.5 text-indigo-500" />
-              <span>Free Plan</span>
+            <span className="font-semibold text-slate-700 flex items-center space-x-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>Workspace Active</span>
             </span>
-            <button
-              onClick={() => setActiveView('billing')}
-              className="text-[10px] text-indigo-600 font-bold hover:underline cursor-pointer"
-            >
-              Upgrade
-            </button>
+            <span className="text-[10px] font-mono text-slate-400 font-medium">v1.0.0</span>
           </div>
-
-          {/* Active Projects quota */}
-          <div>
-            <div className="flex justify-between text-[11px] text-slate-500 mb-1">
-              <span>Active Projects</span>
-              <span className="font-bold text-slate-700">1 / 3</span>
-            </div>
-            <div className="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
-              <div className="bg-indigo-600 h-1.5 rounded-full" style={{ width: '33%' }} />
-            </div>
-          </div>
-
-          {/* Team Members quota */}
-          <div>
-            <div className="flex justify-between text-[11px] text-slate-500 mb-1">
-              <span>Team Seats</span>
-              <span className="font-bold text-slate-700">1 / 5</span>
-            </div>
-            <div className="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
-              <div className="bg-emerald-500 h-1.5 rounded-full" style={{ width: '20%' }} />
-            </div>
+          <div className="text-[11px] text-slate-500">
+            Nexus Engineering · Mobile App Core
           </div>
         </div>
       ) : (
-        <div className="p-2 text-center border-t border-slate-100">
-          <button 
-            onClick={() => setActiveView('billing')}
-            className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center mx-auto hover:bg-indigo-100 transition"
-            title="Manage Plan Quotas"
-          >
-            <Sparkles className="w-4 h-4" />
-          </button>
+        <div className="p-3 text-center border-t border-slate-100">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" title="System Active"></span>
         </div>
       )}
     </aside>
