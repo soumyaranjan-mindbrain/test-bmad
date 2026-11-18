@@ -1,5 +1,14 @@
 # TaskFlow - B2B SaaS Project Management Platform
 
+[![CI Status](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square)](https://github.com/soumyaranjan-mindbrain/test-bmad)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square&logo=react)](https://react.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-green?style=flat-square&logo=node.js)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-5-lightgrey?style=flat-square&logo=express)](https://expressjs.com/)
+[![Socket.IO](https://img.shields.io/badge/Socket.IO-Real--Time-black?style=flat-square&logo=socket.io)](https://socket.io/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47a248?style=flat-square&logo=mongodb)](https://www.mongodb.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
+
 TaskFlow is a production-grade multi-tenant project management platform built with React, Node.js, Express, TypeScript, Mongoose, and Socket.IO, architected using the BMad Method.
 
 ## Overview & Architecture
