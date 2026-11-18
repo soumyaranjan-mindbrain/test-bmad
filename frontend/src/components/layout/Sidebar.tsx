@@ -29,9 +29,8 @@ export const Sidebar: React.FC = () => {
 
   return (
     <aside
-      className={`h-[calc(100vh-3.5rem)] bg-white border-r border-slate-200 flex flex-col justify-between select-none z-20 shrink-0 overflow-hidden ${
-        sidebarCollapsed ? 'w-16' : 'w-60'
-      }`}
+      className={`h-[calc(100vh-3.5rem)] bg-white border-r border-slate-200 flex flex-col justify-between select-none z-20 shrink-0 overflow-hidden ${sidebarCollapsed ? 'w-16' : 'w-60'
+        }`}
     >
       {/* Top Nav Items - Non-scrolling pinned layout */}
       <div className="p-3 space-y-1 overflow-hidden">
@@ -66,11 +65,10 @@ export const Sidebar: React.FC = () => {
             <button
               key={item.id}
               onClick={() => setActiveView(item.id)}
-              className={`w-full flex items-center px-2.5 py-2 rounded-lg text-xs font-semibold transition-all ${
-                isActive
-                  ? 'bg-indigo-50 text-indigo-600 shadow-2xs'
-                  : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
-              } ${sidebarCollapsed ? 'justify-center' : 'justify-between'}`}
+              className={`w-full flex items-center px-2.5 py-2 rounded-lg text-xs font-semibold transition-all ${isActive
+                ? 'bg-indigo-50 text-indigo-600 shadow-2xs'
+                : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                } ${sidebarCollapsed ? 'justify-center' : 'justify-between'}`}
               title={sidebarCollapsed ? item.label : undefined}
             >
               <div className="flex items-center space-x-3 truncate">
